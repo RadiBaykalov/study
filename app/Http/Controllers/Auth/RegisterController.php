@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -68,5 +69,16 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    public function showRegistrationForm() {
+        if (!session()->has('url.intended')) {
+            session(['url.intended' => url()->previous()]);
+        }
+        return view('auth.register');
+    }
+
+    protected function registered(Request $request, $user) {
+        session()->flash('flash-message', 'Thanks for registering.');
     }
 }
