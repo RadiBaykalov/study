@@ -9994,9 +9994,13 @@ a.text-dark:focus {
   }
 }
 
-.navbar-laravel {
-  background-color: #fff;
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+.post {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .post {
+    width: 50%;
+  }
 }
 

@@ -1,6 +1,5 @@
 @if($errors->any())
-	<hr>
-    <div class="form-group alert alert-danger">
+    <div class="form-group alert alert-danger mt-3">
         <ul>
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>

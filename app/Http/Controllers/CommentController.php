@@ -9,12 +9,11 @@ use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
 {
-    public function __construct()
-    {
+    public function __construct() {
         $this->middleware('auth', ['only' => ['store']]);
     }
-    public function store(Post $post)
-    {
+
+    public function store(Post $post) {
         $this->validate(request(), [
             'body' => 'required|min:3'
         ]);

@@ -8,7 +8,14 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+
+
+// refactor- there's a .post in /user and /posts
+.post {
+	@include media-breakpoint-up(xs) {
+		width: 100%;
+	}
+	@include media-breakpoint-up(md) {
+		width: 50%;
+	}
 }
