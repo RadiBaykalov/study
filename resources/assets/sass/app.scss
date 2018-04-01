@@ -59,53 +59,55 @@
 		}
 	}
 
-	#blog-main {
-		padding: 1rem;
-	}
 
-	// blog main sections
-	@include media-breakpoint-up(md) {
 
-		#sidebar, #blog-main {
-			top: 3.3rem;
-			overflow: overlay;
-			position: fixed;
-			bottom: 0;
-		}
-		#sidebar {
-			width: calc(100vw * 0.25);
-		}
-		#blog-main {
-			width: calc(100vw * 0.75);
-			left: calc(100vw * 0.25);
-		}
-		#nav-main {
-			height: 3.3rem;
-			position: fixed;
-		    top: 0;
-		    right: 0;
-		    left: 0;
-		    z-index: 1030;
-		}
-	}
-	@include media-breakpoint-up(lg) {
-		#sidebar {
-			width: calc(100vw * 0.20);
-		}
-		#blog-main {
-			width: calc(100vw * 0.80);
-			left: calc(100vw * 0.20);
-		}
-	}
-	@include media-breakpoint-up(xl) {
-		#sidebar {
-			width: calc(100vw * 0.17);
-		}
-		#blog-main {
-			width: calc(100vw * 0.83);
-			left: calc(100vw * 0.17);
-		}
-	}
+	// #blog-main {
+	// 	padding: 1rem;
+	// }
+
+	// // blog main sections
+	// @include media-breakpoint-up(md) {
+
+	// 	#sidebar, #blog-main {
+	// 		top: 3.3rem;
+	// 		overflow: overlay;
+	// 		position: fixed;
+	// 		bottom: 0;
+	// 	}
+	// 	#sidebar {
+	// 		width: calc(100vw * 0.25);
+	// 	}
+	// 	#blog-main {
+	// 		width: calc(100vw * 0.75);
+	// 		left: calc(100vw * 0.25);
+	// 	}
+	// 	#nav-main {
+	// 		height: 3.3rem;
+	// 		position: fixed;
+	// 	    top: 0;
+	// 	    right: 0;
+	// 	    left: 0;
+	// 	    z-index: 1030;
+	// 	}
+	// }
+	// @include media-breakpoint-up(lg) {
+	// 	#sidebar {
+	// 		width: calc(100vw * 0.20);
+	// 	}
+	// 	#blog-main {
+	// 		width: calc(100vw * 0.80);
+	// 		left: calc(100vw * 0.20);
+	// 	}
+	// }
+	// @include media-breakpoint-up(xl) {
+	// 	#sidebar {
+	// 		width: calc(100vw * 0.17);
+	// 	}
+	// 	#blog-main {
+	// 		width: calc(100vw * 0.83);
+	// 		left: calc(100vw * 0.17);
+	// 	}
+	// }
 
 
 

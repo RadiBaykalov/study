@@ -2,14 +2,14 @@
 
 
 @section('content')
-	<div class="container-fluid" id="sidebar">
-	@include('blog.sidebar')
-	</div>
-	<!-- <div style="resize:vertical;overflow:auto;"></div> -->
 
-	<div id="blog-main">
+<div class="col-12 col-md-3 col-lg-2">
+	@include('blog.sidebar')
+</div>
+<main class="col-12 col-md-9 col-lg-10">
 	@yield('blog')
-	</div>
+</main>
+
 
 
 <!-- 

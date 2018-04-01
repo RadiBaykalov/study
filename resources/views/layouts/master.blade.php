@@ -16,7 +16,9 @@
 
     @include('layouts.nav')
     <!-- .content  -->
-    @yield('content')
+        <div class="row no-gutters">
+            @yield('content')
+        </div>
     
     @include('partials.flash')
 

@@ -10031,60 +10031,6 @@ a.text-dark:focus {
   font-size: 1.1rem;
 }
 
-#blog-main {
-  padding: 1rem;
-}
-
-@media (min-width: 768px) {
-  #sidebar,
-  #blog-main {
-    top: 3.3rem;
-    overflow: overlay;
-    position: fixed;
-    bottom: 0;
-  }
-
-  #sidebar {
-    width: calc(100vw * 0.25);
-  }
-
-  #blog-main {
-    width: calc(100vw * 0.75);
-    left: calc(100vw * 0.25);
-  }
-
-  #nav-main {
-    height: 3.3rem;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1030;
-  }
-}
-
-@media (min-width: 992px) {
-  #sidebar {
-    width: calc(100vw * 0.20);
-  }
-
-  #blog-main {
-    width: calc(100vw * 0.80);
-    left: calc(100vw * 0.20);
-  }
-}
-
-@media (min-width: 1200px) {
-  #sidebar {
-    width: calc(100vw * 0.17);
-  }
-
-  #blog-main {
-    width: calc(100vw * 0.83);
-    left: calc(100vw * 0.17);
-  }
-}
-
 #blog-main .d-:nth-child(even) {
   margin-left: 3rem;
 }
