@@ -13888,6 +13888,12 @@ __webpack_require__(13);
 //     el: '#app'
 // });
 
+
+$(document).on('click', '.nav-item', function () {
+  $(".nav-item").removeClass("active");
+  $(this).addClass("active");
+});
+
 /***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {

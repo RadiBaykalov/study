@@ -10,19 +10,18 @@
     
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @stack('styles')
 </head>
 <body>
 
     @include('layouts.nav')
     <!-- .content  -->
-    <div class="container-fluid">
-        <div class="row">
+        <div class="row no-gutters">
             @yield('content')
         </div>
-    </div>
     
     @include('partials.flash')
 
-
+    @stack('scripts')
 </body>
 </html>

@@ -24,6 +24,7 @@ class CommentController extends Controller
             'user_id' => Auth::id()
         ]);
 
+        session()->flash('flash-message', 'Comment created');
         return back();
     }
 }

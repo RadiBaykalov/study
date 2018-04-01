@@ -20,3 +20,10 @@ require('./bootstrap');
 // const app = new Vue({
 //     el: '#app'
 // });
+
+
+
+   $(document).on('click', '.nav-item', function() {
+       $(".nav-item").removeClass("active");
+       $(this).addClass("active");
+   });

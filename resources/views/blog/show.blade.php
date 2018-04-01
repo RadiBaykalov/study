@@ -2,19 +2,22 @@
 
 
 @section('blog')
-	<div class="container-fluid">
-		<h1>{{ $post->title }}</h2>
-		<p>
-			by <a href="/user/{{ $post->user->id }}">{{ $post->user->name }}</a> on {{ $post->created_at->toDayDateTimeString() }}
-			@if($post->user->id === Auth::id())
-				<a class="btn btn-sm btn-primary" href="/blog/{{ $post->id }}/edit">Edit</a>
-			@endif
-		</p>
-		<p class="lead">{{ $post->body }}</p>
+	<div class="container">
+		<div id="post" class="rounded">
+			<h1 class="display-4">{{ $post->title }}</h1>
+			<p>
+				by <a href="/user/{{ $post->user->id }}">{{ $post->user->name }}</a> on {{ $post->created_at->toDayDateTimeString() }}
+				@if($post->user->id === Auth::id())
+					<a class="btn btn-sm btn-primary" href="/blog/{{ $post->id }}/edit">Edit</a>
+				@endif
+			</p>
+			<hr>
+			<p class="lead">{{ $post->body }}</p>
+		</div>
 	</div>
 
 
-	<div class="container-fluid">
+	<div class="container">
 
 		<ul class="list-group list-group-flush">
 			@foreach($post->comments as $comment)
@@ -46,3 +49,13 @@
 	</div>
 
 @endsection
+
+@push('styles')
+
+<style type="text/css">
+#post {
+	background-color: #eee;
+	padding: 1rem;
+}
+</style>
+@endpush
