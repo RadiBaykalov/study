@@ -26,6 +26,8 @@ Route::get('/blog/{post}/edit', 'PostController@edit');
 Route::put('/blog/{post}', 'PostController@update');
 Route::post('/blog/{post}/comments', 'CommentController@store'); // can not be called with action() ?
 
+Route::get('/blog/tags/{tag}', 'TagController@index');
+
 
 // no user controller
 Route::get('/user/{user}', function($user_id) {

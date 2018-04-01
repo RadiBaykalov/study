@@ -2,12 +2,17 @@
 
 
 @section('content')
-
-<div class="col-12 col-md-3 col-xl-2 py-2 py-md-3">
+	<div class="container-fluid" id="sidebar">
 	@include('blog.sidebar')
-</div>
-<main class="col-12 col-md-9 col-xl-10 py-2 py-md-3">
-	@yield('blog')
-</main>
+	</div>
+	<!-- <div style="resize:vertical;overflow:auto;"></div> -->
 
+	<div id="blog-main">
+	@yield('blog')
+	</div>
+
+
+<!-- 
+
+ -->
 @endsection

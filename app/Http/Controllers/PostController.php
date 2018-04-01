@@ -10,15 +10,20 @@ use Carbon\Carbon;
 class PostController extends Controller
 {
 
+    public function __construct() {
+        $this->middleware('auth')->only('create');
+    }
+
     public function index() {
         $posts = Post::latest();
         if ($month = request('month')) {
-            $posts->whereMonth('created_at', Carbon::parse($month)->month);
+            $posts->whereMonth('created_at', Carbon::parse('1 '.$month)->month);
         }
         if ($year = request('year')) {
             $posts->whereYear('created_at', $year);
         }
         $posts = $posts->get();
+        // dd($posts);
 
         return view('blog.posts', compact('posts'));
     }
@@ -32,6 +37,7 @@ class PostController extends Controller
     }
 
     public function store() {
+        $this->authorize('create', Post::class);
         $this->validate(request(), [
             'title' => 'required|min:3',
             'body' => 'required|min:20'
@@ -43,7 +49,7 @@ class PostController extends Controller
             'user_id' => Auth::id()
         ]);
 
-        session()->flash('flash-message', 'Thanks for submitting a post.');
+        session()->flash('flash-message', 'Post created');
         return redirect('/blog/' . $post->id);
     }
 
@@ -63,14 +69,14 @@ class PostController extends Controller
             'title' => request('title'),
             'body' => request('body')
         ]);
-        session()->flash('flash-message', 'The post is updated.');
+        session()->flash('flash-message', 'Post updated');
         return redirect('/blog/' . $post->id);
     }
 
     public function destroy(Post $post) {
         $this->authorize('delete', $post);
         $post->delete();
-        session()->flash('flash-message', 'The post is deleted.');
+        session()->flash('flash-message', 'Post deleted');
         return redirect('/blog');
     }
 }

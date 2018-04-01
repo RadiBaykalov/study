@@ -9,13 +9,184 @@
 @import '~bootstrap/scss/bootstrap';
 
 
+// .navbar-expand-md .navbar-toggler {
+// 	@include media-breakpoint-up(md) {
+//     	display: inline !important;
+//     	cursor: default !important;
+// 	}
+// }
 
-// refactor- there's a .post in /user and /posts
-.post {
-	@include media-breakpoint-up(xs) {
-		width: 100%;
-	}
-	@include media-breakpoint-up(md) {
-		width: 50%;
+
+@include media-breakpoint-up(md) {
+	.nav, .navbar-nav {
+	  	.dropdown:hover > .dropdown-menu {
+	    	display: block;
+	    }
 	}
 }
+
+.shadow-dynamic {
+	box-shadow: 0 5px 10px rgba(0,0,0,.15);
+}
+.shadow-dynamic:hover {
+	box-shadow: 0 5px 10px rgba(0,0,0,.30);
+}
+
+.btn-xs {
+	font-size: 0.7rem;
+    padding: .01rem 0.3rem;
+}
+
+.row.collapse.show {
+	display: flex;
+}
+
+
+
+
+//////////////////
+// BLOG SIDEBAR //
+//////////////////
+
+	 #blog-menu {
+		.nav-item:hover > .nav-link {
+			// background-color: #ccf;
+			box-shadow: -1px 1px 3px 0 rgba(0,0,0,.30);
+		}
+
+		.navbar-toggler {
+			font-size: 1.1rem;
+		}
+	}
+
+	#blog-main {
+		padding: 1rem;
+	}
+
+	// blog main sections
+	@include media-breakpoint-up(md) {
+
+		#sidebar, #blog-main {
+			top: 3.3rem;
+			overflow: overlay;
+			position: fixed;
+			bottom: 0;
+		}
+		#sidebar {
+			width: calc(100vw * 0.25);
+		}
+		#blog-main {
+			width: calc(100vw * 0.75);
+			left: calc(100vw * 0.25);
+		}
+		#nav-main {
+			height: 3.3rem;
+			position: fixed;
+		    top: 0;
+		    right: 0;
+		    left: 0;
+		    z-index: 1030;
+		}
+	}
+	@include media-breakpoint-up(lg) {
+		#sidebar {
+			width: calc(100vw * 0.20);
+		}
+		#blog-main {
+			width: calc(100vw * 0.80);
+			left: calc(100vw * 0.20);
+		}
+	}
+	@include media-breakpoint-up(xl) {
+		#sidebar {
+			width: calc(100vw * 0.17);
+		}
+		#blog-main {
+			width: calc(100vw * 0.83);
+			left: calc(100vw * 0.17);
+		}
+	}
+
+
+
+
+
+
+
+
+
+#blog-main .d-:nth-child(even) {
+	margin-left: 3rem;
+}
+
+	// hexagon?
+								.hexagon {
+									display: inline-block;
+									margin-left:0.15rem;
+									////
+
+								  position: relative;
+								  width: 30px; 
+								  height: 17.32px;
+								  margin: 8.66px 0;
+								  background-image: url(http://csshexagon.com/img/meow.jpg);
+								  background-size: auto 34.6410px;
+								  background-position: center;
+								}
+
+								.hexTop,
+								.hexBottom {
+								  position: absolute;
+								  z-index: 1;
+								  width: 21.21px;
+								  height: 21.21px;
+								  overflow: hidden;
+								  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+								  -ms-transform: scaleY(0.5774) rotate(-45deg);
+								  transform: scaleY(0.5774) rotate(-45deg);
+								  background: inherit;
+								  left: 4.39px;
+								}
+
+								/*counter transform the bg image on the caps*/
+								.hexTop:after,
+								.hexBottom:after {
+								  content: "";
+								  position: absolute;
+								  width: 30.0000px;
+								  height: 17.320508075688775px;
+								  -webkit-transform:  rotate(45deg) scaleY(1.7321) translateY(-8.6603px);
+								  -ms-transform:      rotate(45deg) scaleY(1.7321) translateY(-8.6603px);
+								  transform:          rotate(45deg) scaleY(1.7321) translateY(-8.6603px);
+								  -webkit-transform-origin: 0 0;
+								  -ms-transform-origin: 0 0;
+								  transform-origin: 0 0;
+								  background: inherit;
+								}
+
+								.hexTop {
+								  top: -10.6066px;
+								}
+
+								.hexTop:after {
+								  background-position: center top;
+								}
+
+								.hexBottom {
+								  bottom: -10.6066px;
+								}
+
+								.hexBottom:after {
+								  background-position: center bottom;
+								}
+
+								.hexagon:after {
+								  content: "";
+								  position: absolute;
+								  top: 0.0000px;
+								  left: 0;
+								  width: 30.0000px;
+								  height: 17.3205px;
+								  z-index: 2;
+								  background: inherit;
+								}

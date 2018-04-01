@@ -29,11 +29,11 @@ class User extends Authenticatable
 
 
     public function comments() {
-        return $this->hasMany(Comment::class)->orderBy('created_at', 'desc');
+        return $this->hasMany(Comment::class)->latest();
     }
 
     public function posts() {
-        return $this->hasMany(Post::class)->orderBy('created_at', 'desc');
+        return $this->hasMany(Post::class)->latest();
     }
 
     public function delete() {
